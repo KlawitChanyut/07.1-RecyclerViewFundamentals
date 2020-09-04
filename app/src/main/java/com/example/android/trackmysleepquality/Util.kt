@@ -54,6 +54,7 @@ fun convertDurationToFormatted(startTimeMilli: Long, endTimeMilli: Long, res: Re
 }
 
 
+
 /**
  * These functions create a formatted string that can be set in a TextView.
  */
@@ -64,7 +65,6 @@ fun convertDurationToFormatted(startTimeMilli: Long, endTimeMilli: Long, res: Re
 fun convertNumericQualityToString(quality: Int, resources: Resources): String {
     var qualityString = resources.getString(R.string.three_ok)
     when (quality) {
-        -1 -> qualityString = "--"
         0 -> qualityString = resources.getString(R.string.zero_very_bad)
         1 -> qualityString = resources.getString(R.string.one_poor)
         2 -> qualityString = resources.getString(R.string.two_soso)
@@ -136,4 +136,5 @@ fun formatNights(nights: List<SleepNight>, resources: Resources): Spanned {
         return Html.fromHtml(sb.toString())
     }
 }
+class TextItemViewHolder(val textView: TextView): RecyclerView.ViewHolder(textView)
 
